@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		html * {
+			font-size: 24px;
+		}
+		#openApp,
+		.ha {
+			height: 60px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<script src="scripts/visibility.js"></script>
+
+	<div class="ha">
+		
+	<!-- <a href="https://itunes.apple.com/cn/app/id892359007" id="">贴吧客户端</a>   -->
+	</div>
+	<div id="openApp">jijii</div>
+
+<script type="text/javascript">  
+
+    document.getElementById('openApp').onclick = function(e){  
+
+        // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为  
+
+        // 否则打开a标签的href链接  
+        // window.location = "bddoctor://";
+
+        var ifr = document.createElement('iframe');  
+
+        ifr.src = 'bddoctor://';  
+
+        ifr.style.display = 'none';  
+
+        document.body.appendChild(ifr);  
+
+        window.setTimeout(function(){  
+
+            document.body.removeChild(ifr); 
+            alert('ok'); 
+
+        },1000)  
+
+    };  
+
+</script>  
+</body>
+</html>

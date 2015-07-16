@@ -1,0 +1,153 @@
+// bower:scss
+// endbower
+
+body {
+  background: #ddd;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.hero-unit {
+  margin: 50px auto 0 auto;
+  width: 300px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 60px;
+  h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.flip {
+  width: 100%;
+  position: relative;
+  width: 495px;
+  height: 690px;
+
+  #one {
+    transform: rotateX(-90deg);
+    transition-duration: .5s;
+    transition-delay: .5s;
+   transform-style: preserve-3d;
+  }
+  #two {
+  }
+  #three {
+       transform: rotateX(0);
+       // z-index: 11;
+       transition: all .5s linear;
+       transform-style: preserve-3d;
+    
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    
+  }
+  &:hover {
+    #one {
+        transform: rotateX(0);
+      }
+   #three {
+       transform: rotateX(90deg);
+     } 
+  }
+}
+
+
+.button {
+  float: left;
+  min-width: 150px;
+  max-width: 250px;
+  display: block;
+  margin: 1em;
+  padding: 1em 2em;
+  border: none;
+  background: none;
+  color: inherit;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.button--quidel {
+  background: #7986CB;
+  color: #7986CB;
+  overflow: hidden;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+.button--quidel.button--inverted::before {
+  background: #7986CB;
+}
+.button--quidel::before {
+  background: #37474F;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.button--quidel::before, .button--quidel::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border-radius: inherit;
+}
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.button--quidel.button--inverted::after {
+  background: #37474F;
+}
+.button--quidel::after {
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #FFF;
+}
+
+.button--quidel.button--inverted:hover {
+  color: #7986CB;
+}
+
+.button--quidel:hover::before {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.button--quidel.button--inverted {
+  background: #FFF;
+  color: #FFF;
+}
+.bg-2 .button {
+  color: #ECEFF1;
+  border-color: #ECEFF1;
+}
